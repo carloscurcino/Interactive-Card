@@ -1,9 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap');
 * {
     margin: 0;
     padding: 0;
     font-family: 'Space Grotesk', sans-serif;
-    font-weight: 400;
+    font-weight: 500;
+    text-transform: uppercase;
 }
 :root{
     --primary-linear-gradient: hsl(249, 99%, 64%) to hsl(278, 94%, 30%);
@@ -51,18 +52,38 @@ html{
     display: flex;
     flex-direction: column;
     justify-content: end;
-    align-items: center;
+    //align-items: center;
+    //Sjustify-content: space-between;
     gap: 15px;
     height: 200px;
     width: 365px;
     position: absolute;
-    transform: translate(30%, -70%);
+    transform: translate(30%, -60%);
+}
+.card-front #cardNum{
+    position: relative;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 23px;
+    font-weight: 500;
+    letter-spacing: 2.5px;
+    justify-content: center;
 }
 .card-front span{
     position: relative;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    padding-left: 25px;
+}
+.card-front div{
+    padding-bottom: 15px;
+}
+#cardName{
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 500;
+    margin-right: 150px;
 }
 .card-front img{
-    //display: block;
     position: absolute;
     border-bottom-right-radius: 6px;
     border-top-right-radius: 6px;
@@ -72,7 +93,12 @@ html{
 }
 .card-front #logo{
     height: 40px;
-    transform: translate(80%, -1700%);
+    width: auto;
+    position: absolute;
+    padding-bottom: 140px;
+    padding-left: 25px;
+    padding-right: 270px;
+    /* transform: translate(30%, -350%); */
 }
 .card-back{
     display: flex;
@@ -85,11 +111,14 @@ html{
     border-bottom-right-radius: 7px;
     border-top-right-radius: 7px;
     position: absolute;
-    transform: translate(50%, 45%); 
+    transform: translate(50%, 60%); 
     box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
 }
 .card-back span{
     position: relative;
+    font-size: 12px;
+    font-weight: 500;
+    margin-left: 250px;
 }
 .card-back img{
     position: absolute;
@@ -109,6 +138,10 @@ html{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    font-size: 13px;
+}
+.form-block #date-label{
+    margin-right: 75px;
 }
 .btn{
     border: none;
@@ -118,17 +151,28 @@ html{
     cursor: pointer;
     transition: background .3s;
     border-radius: 5px;
+    color: white;
     display: inline-block;
 }
-button:hover{
+#submit_btn:hover{
     background-color: var(--neutral-dark-grayish-violet);
 }
-button a{
+#submit_btn a{
     text-decoration: none;
     font-size: 0.93rem;
     font-weight: 500;
     color: #fff;
 }
+#continue_btn:hover{
+    background-color: var(--neutral-dark-grayish-violet);
+}
+#continue_btn a{
+    text-decoration: none;
+    font-size: 0.93rem;
+    font-weight: 500;
+    color: #fff;
+}
+
 .form-block form input{
     margin: 0.6rem 0;
     padding: 11px 11px;
@@ -140,7 +184,11 @@ button a{
     background-color: #eeeeee75;
 }
 .form-block form input:focus-visible{
-    outline: 1px solid var(--primary-linear-gradient);
+    border-image: radial-gradient(circle at top left, rgba(100,72,254,1), rgba(96,5,148,1)) 8;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 10px;
+    outline: none;
 }
 .form-block form input::placeholder{
     color: #000000be;
@@ -160,3 +208,38 @@ button a{
 .date input{
     width: 60px;
 }
+.actived-form{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    padding-top: 4%;
+    gap: 20px;
+    font-size: 13px;
+    color: var(--neutral-dark-grayish-violet);
+}
+.hidden{
+    display: none !important;
+}
+.actived-form i img{
+    height: 60px;
+    margin-bottom: 20px;
+}
+.actived-form h2{
+    font-size: 20px;
+    margin-bottom: 15px;
+    color: var(--neutral-very-dark-violet);
+}
+.continue-button{
+    margin-top: 35px;
+    width: 340px;
+}
+
+
+//RESPONSIVIDADE
+
+@media(max-width : 1000px) {
+    body{background-color: red;}
+}
+    
